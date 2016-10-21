@@ -72,10 +72,10 @@ public class Dijkstra {
 	public static void main(String[]args) {
 		
 		int[][]neighbors = {{1,2,2}
-							,{1,4,4}
-							,{2,3,1}
-							,{3,4,3}
-							,{4,5,1}};
+			  		,{1,4,4}
+			   		,{2,3,1}
+			   		,{3,4,3}
+			   		,{4,5,1}};
 		int shortestDistance = findShortestDistance(neighbors, 1, 5);
 		System.out.print("The shortest distance is "+shortestDistance);
 	}
