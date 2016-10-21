@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class Dijkstra {
 	private static void InitializeList(List<Integer>q, int totalNodes) {
-		for(int i = 0; i < totalNodes; i++) {
+		for(int i = 1; i <= totalNodes; i++) {
 			q.add(i);
 		}
 	}
@@ -42,7 +42,8 @@ public class Dijkstra {
 		
 		while(current != 0 ) {
 			if(!unVisited.isEmpty()) {
-				unVisited.remove(current);
+				int index = unVisited.indexOf(current); /*Had to use index because index changes after removing objects from middle and removes wrong objects*/
+				unVisited.remove(index);
 			}
 			int nextCurrent = 0;
 			int nextShortestDistance = Integer.MAX_VALUE;
