@@ -59,7 +59,8 @@ public class Dijkstra {
 						}
 					}
 					int newDistance = distance + shortestDistanceFromSource[current - 1];
-					shortestDistanceFromSource[temp - 1] = newDistance;
+					if(newDistance < shortestDistanceFromSource[temp - 1])
+						shortestDistanceFromSource[temp - 1] = newDistance;
 				}
 			}
 			current = nextCurrent;
