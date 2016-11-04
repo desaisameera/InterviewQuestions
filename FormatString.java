@@ -18,6 +18,9 @@ public class FormatString {
 		if(str.length() == 0 || str.isEmpty()) {
 			return null;
 		}
+		if(str.length() == n) {
+			return str;
+		}
 		int firstGroupLength = findLength(str, n);
 		StringBuffer newString = new StringBuffer(""); // Empty String
 		int stringIndex = 0;
