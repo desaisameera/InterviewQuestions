@@ -40,7 +40,44 @@ public class AnagramCheck {
 		}
 		return true;
 	}
-	
+	boolean isAnagramUsingMap(String str1, String str2) {
+		if(str1 == null && str2 == null) {
+			return true;
+		}
+		if(str1.length() != str2.length()) {
+			return false;
+		}
+		Map<Character, Integer>countOfCharacters = new LinkedHashMap<Character, Integer>();
+		
+		for(int index = 0; index < str1.length(); index++){
+			char key = str1.charAt(index);
+			if(!countOfCharacters.containsKey(key)){
+				countOfCharacters.put(key, 1);
+			}
+			else {
+				int value = countOfCharacters.get(key);
+				countOfCharacters.put(key, value + 1);
+			}
+		}
+		
+		for(int index2 = 0; index2 < str2.length(); index2++) {
+			char key = str2.charAt(index2);
+			if(!countOfCharacters.containsKey(key)){
+				return false;
+			}
+			else {
+				int value = countOfCharacters.get(key);
+				countOfCharacters.put(key, value - 1);
+			}
+		}
+		
+		for(char key : countOfCharacters.keySet()) {
+			if(countOfCharacters.get(key) != 0) {
+				return false;
+			}
+		}
+		return true;
+	}
 	public static void main(String[]args) {
 		String str1 = "dog";
 		String str2 = "god";
