@@ -27,12 +27,12 @@ public class AnagramCheck {
 		int[]count = new int[256];
 		
 		for(int index1 = 0; index1 < str1.length(); index1++) {
-			int index = str1.charAt(index1) - 1;
+			int index = str1.charAt(index1);
 			count[index]++;
 		}
 		
 		for(int index2 = 0; index2 < str2.length(); index2++) {
-			int index = str2.charAt(index2) - 1;
+			int index = str2.charAt(index2);
 			count[index]--;
 			if(count[index] < 0) {
 				return false;
