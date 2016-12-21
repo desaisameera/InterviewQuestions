@@ -1,5 +1,19 @@
 
 public class StringReverse {
+	/*Reverse string recursively
+	 * */
+	public String reverseStringRecursively(String str) {
+		if(str == null || str == "") {
+			return str;
+		}
+		if(str.length() == 1) {
+			return str;
+		}
+		String first = str.substring(0, 1);
+		String remaining = str.substring(1);
+		return reverseStringRecursively(remaining).concat(first);
+	}
+	
 	/*Reverse string iteratively
 	 * */
 	public String reverseStringIterative(String str) {
