@@ -33,6 +33,7 @@ public class StringReverse {
 		String str = "Hello World";
 		StringReverse sr = new StringReverse();
 		System.out.println(sr.reverseStringIterative(str));
+		System.out.println(sr.reverseStringRecursively(str));
 	}
 
 }
